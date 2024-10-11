@@ -1,22 +1,33 @@
 const express = require("express");
 const cors = require("cors");
-const app = express();
+const connect = require("./config/db"); 
+const prodController = require("./controller/prod.controller");
+const userController = require("./controller/user.controller"); 
+const cartController = require("./controller/cart.controller"); 
+const wishlistController = require("./controller/wishlist.controller"); 
+const { authenticate } = require("./middlewares/authenticate"); 
 
-const connect = require("./config/db");
+const app = express();
 app.use(cors());
 app.use(express.json());
 const PORT = process.env.PORT || 8080;
 
-const prodController = require("./controller/prod.controller");
-const userController = require("./controller/user.controller");
-const cartController = require("./controller/cart.controller");
-const wishlistController = require("./controller/wishlist.controller");
-const { authenticate } = require("./middlewares/authenticate");
+// Connect to the database
+connect()
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch(err => {
+    console.error("Database connection error:", err);
+  });
 
+// Route handlers
 app.use("/courses", prodController);
 app.use("/join", userController);
 app.use("/cart", cartController);
 app.use("/wishlist", wishlistController);
+
+// Auth route
 app.post("/auth", authenticate, async (req, res) => {
   try {
     return res.status(200).send({ auth: true, user: req.user });
@@ -25,11 +36,7 @@ app.post("/auth", authenticate, async (req, res) => {
   }
 });
 
-app.listen(PORT, async (req, res) => {
-  try {
-    await connect();
-  } catch (err) {
-    return res.status(400).send({ message: err.message });
-  }
-  console.log(`listening of port ${PORT}`);
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 });

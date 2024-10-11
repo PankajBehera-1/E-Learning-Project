@@ -1,0 +1,85 @@
+.container {
+  margin-top: -5rem;
+  display: flex;
+  margin-left: 25px;
+  justify-content: center;
+  align-items: center;
+  height: 94vh; /* Full height to center vertically */
+}
+
+.card {
+  background-color: white; /* Card background color */
+  padding: 30px; /* Padding inside the card */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  width: 400px; /* Fixed width for the card */
+}
+.card h4{
+  text-align: center;
+}
+.login_inputDiv {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Full width of the card */
+  margin: 20px 0; /* Space between elements */
+}
+
+.login_pw {
+  padding: 12px;
+  margin: 10px 0; /* Space between input fields */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.login_pw:focus {
+  outline: none;
+  border-color: #007bff; /* Highlight border on focus */
+}
+
+.alert {
+  margin-bottom: 10px; /* Space below alert */
+}
+
+.login_input {
+  background-color: #c92517 !important; 
+  color: white; /* Button text color */
+  border: none;
+  padding: 12px;
+  margin-top: 10px;
+  width: 100% !important;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login_input:hover {
+  background-color: #0056b3; /* Darken on hover */
+}
+
+.forgot_pws {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.login_org {
+  margin-top: 20px; /* Space above signup option */
+  text-align: center;
+}
+
+a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.hr_line_login {
+  width: 100%; /* Full width */
+  border: 0;
+  height: 1px;
+  background: #ddd; /* Light gray line */
+}

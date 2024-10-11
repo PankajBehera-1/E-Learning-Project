@@ -2,71 +2,62 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const express = require("express");
 const router = express.Router();
+const User = require("../models/user.model"); // Adjust the path if necessary
 
-// const EventEmitter = require("events");
-// const eventEmitter = new EventEmitter();
-// const { welcomeMail } = require("../utils");
+// Function to create a new JWT token
 const newToken = (user) => {
   return jwt.sign({ user }, process.env.JWT_SECRET_KEY);
 };
 
-const User = require("../models/user.model");
-
+// GET endpoint for signup popup (optional, can be removed if not needed)
 router.get("/signup-popup", async (req, res) => {
   try {
-    const user = await User.find().lean().exec();
-    return res.status(200).send(user);
-  } catch (err) {
-    res.send(err.message);
-  }
-});
-
-router.post("/signup-popup", async (req, res) => {
-  try {
-    let new_user = await await User.findOne({ email: req.body.email })
-      .lean()
-      .exec();
-
-    if (new_user)
-      return res.status(400).send({ message: "Please try another email" });
-
-    new_user = await User.create(req.body);
-
-    const token = newToken(new_user);
-    res.cookie("Bearer ", token, { httpOnly: true });
-
-    //   eventEmitter.on("User Register", welcomeMail);
-    //   eventEmitter.emit("User Register", {
-    //     from: "admin@giftcart.com",
-    //     to: new_user.email,
-    //     new_user,
-    //   });
-
-    return res.status(200).send({ new_user, token });
+    const users = await User.find().lean().exec();
+    return res.status(200).send(users);
   } catch (err) {
     return res.status(500).send(err.message);
   }
 });
 
+// POST endpoint for user signup
+router.post("/signup-popup", async (req, res) => {
+  try {
+    const existingUser = await User.findOne({ email: req.body.email }).lean().exec();
+    if (existingUser) {
+      return res.status(400).send({ message: "Please try another email" });
+    }
+
+    const newUser = await User.create(req.body);
+    const token = newToken(newUser);
+    
+    // Set cookie with the JWT token
+    res.cookie("Bearer", token, { httpOnly: true });
+
+    return res.status(201).send({ newUser, token });
+  } catch (err) {
+    return res.status(500).send(err.message);
+  }
+});
+
+// POST endpoint for user login
 router.post("/login-popup", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
-      return res
-        .status(400)
-        .send({ message: "Please try another email or password" });
+      return res.status(400).send({ message: "Invalid email or password" });
     }
 
-    const match = user.checkPassword(req.body.password);
-    if (!match) {
-      return res.status(400).send({ message: "Password is wrong" });
+    const isMatch = user.checkPassword(req.body.password);
+    if (!isMatch) {
+      return res.status(400).send({ message: "Invalid email or password" });
     }
+
     const token = newToken(user);
+    res.cookie("Bearer", token, { httpOnly: true });
 
-    res.cookie("Bearer ", token, { httpOnly: true });
-    res.send({ user, token });
+    return res.status(200).send({ user, token });
   } catch (error) {
-    res.status(500).send(e.message);
+    return res.status(500).send(error.message);
   }
 });
 

@@ -1,0 +1,219 @@
+
+.payment_form_details {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form_right{
+  width: 60%;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+.form_left {
+  width: 35%;
+  
+  padding: 3.3rem;
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+.selectplace {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.select_country, .select_state {
+  width: 48%;
+}
+
+.select_country select, .select_state select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.payment_options {
+  margin-bottom: 20px;
+}
+
+.creditcard_option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.input_radio {
+  margin-right: 10px;
+}
+
+.radio_span {
+  font-weight: 500;
+}
+
+.payment_span_images img {
+  height: 20px;
+  margin-left: 10px;
+}
+
+.card_detailsDiv {
+  margin-top: 20px;
+}
+
+.input_cardnameDiv, .input_cardnumDiv, .input_securitynumDiv {
+  margin-bottom: 15px;
+}
+
+.input_cardname, .input_cardnum, .input_securitynum {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.card_validity {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_val_month, .card_val_year {
+  width: 48%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkbox_payment {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.checkbox_payment input {
+  margin-right: 5px;
+}
+
+.price_table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.price_table td {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.course_price {
+  font-weight: bold;
+}
+
+.after_total {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #555;
+}
+
+.terms_conditions {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.complete_payment {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  background-color: #e50f0f;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.complete_payment:hover {
+  background-color: #0056b3;
+}
+
+.ordersummary {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.ordersummery_details {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.ordersummery_details img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.order_course {
+  flex-grow: 1;
+}
+
+.course_price {
+  display: flex;
+  justify-content: space-between;
+}
+.cardValidity {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.cardSelect {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.cardSelect:last-child {
+  margin-right: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.cardValMonth,
+.cardValYear,
+.inputSecurityNum {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.inputSecurityNum {
+  margin-top: 5px; /* To create space between label and input */
+}
+
+.inputSecurityNum:focus,
+.cardValMonth:focus,
+.cardValYear:focus {
+  border-color: #007bff; /* Highlight border on focus */
+  outline: none;
+}
+
+.cardSelect:last-child .inputSecurityNum {
+  flex: 1; /* Ensures the security code input fills the space */
+}

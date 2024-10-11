@@ -1,6 +1,5 @@
-import { Header } from "../Header/Header";
 import "../Header/header.css";
-import banner from "../../assets/middle.jpg";
+import banner from "../../assets/background.jpg";
 import { Link } from "react-router-dom";
 import { ProdCard, SuggestionCard, TechCard } from "../ProdCard/ProdCard";
 import { PopperCard } from "../ProdCard/popperprodcard";
@@ -10,6 +9,9 @@ import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Skeleton from "@mui/material/Skeleton";
+
+import { Bottombar } from "../Bottom/Bottombar";
+
 export const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
@@ -46,7 +48,17 @@ const Banner = () => {
     <>
       <section>
         <div className="midbanner">
-          <div className="bannercard">
+          <div
+            className="bannercard"
+            style={{
+              backgroundColor: "#dbdbdbd", 
+              padding: "20px", 
+              borderRadius: "10px", 
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Subtle shadow
+              
+            }}
+          >
+            {" "}
             <div>
               <h1>Dream big</h1>
               <p>
@@ -313,6 +325,7 @@ const Banner = () => {
           <section></section>
         </>
       )}
+      <Bottombar />
     </>
   );
 };
@@ -414,3 +427,4 @@ const Part = () => {
     </>
   );
 };
+
