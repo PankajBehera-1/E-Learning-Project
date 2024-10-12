@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import { Bottombar } from "../Bottom/Bottombar";
 import { CartPage } from "../Cart/Cart";
 import { Header } from "../Header/Header";
 import { Landigpage } from "../LandingPage/Landin";
@@ -23,7 +22,6 @@ export const AllRoutes = () => {
         <Route path="/join/signup-popup" element={<Signup />}></Route>
         <Route path="/join/login-popup" element={<Login />}></Route>
       </Routes>
-      {/* <Bottombar /> */}
     </>
   );
 };

@@ -12,6 +12,8 @@ import Skeleton from "@mui/material/Skeleton";
 
 import { Bottombar } from "../Bottom/Bottombar";
 
+import style from "./landing.module.css";
+
 export const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
@@ -263,12 +265,13 @@ const Banner = () => {
               </div>
             </div>
           </section>
+
           <section>
             <div className="poster1">
               <div className="poster-cont">
                 <img
                   className="banner-2"
-                  src="https://s.udemycdn.com/home/non-student-cta/instructor-1x-v3.jpg"
+                  src="https://img.freepik.com/premium-photo/young-businesswoman-is-standing-holding-file-her-hand_1218867-243870.jpg?w=740"
                   alt=""
                 />
                 <div>
@@ -296,7 +299,7 @@ const Banner = () => {
                 </div>
                 <img
                   className="banner-2"
-                  src="https://s.udemycdn.com/home/non-student-cta/ub-1x-v3.jpg"
+                  src="https://img.freepik.com/premium-vector/learning-logo_96278-175.jpg?w=740"
                   alt=""
                 />
               </div>
@@ -307,7 +310,7 @@ const Banner = () => {
               <div className="poster-cont">
                 <img
                   className="banner-2"
-                  src="https://s.udemycdn.com/home/non-student-cta/transform-1x-v3.jpg"
+                  src="https://img.freepik.com/premium-photo/student-using-laptop-classroom_1293807-4593.jpg?w=826"
                   alt=""
                 />
                 <div>
@@ -345,14 +348,14 @@ const PitchCard2 = () => {
     <div className="pitch-cont">
       <img
         className="pitchcard2img"
-        src="https://www.udemy.com/staticx/udemy/images/v7/logo-ub.svg"
+        src="https://static.vecteezy.com/system/resources/thumbnails/002/294/890/small_2x/digital-education-web-banner-design-teacher-on-monitor-to-explain-the-graph-online-education-e-learning-digital-education-platform-concept-header-or-footer-banner-free-vector.jpg"
         alt=""
       />
       <p className="pitchdec">
-        Get unlimited access to 6,000+ of Udemy’s top courses for your team.
+        Get unlimited access to 6,000+ of E-learning's top courses for your team.
         Learn and improve skills across business, tech, design, and more.
       </p>
-      <UdemyBtn btn={"Get Udemy Business"} />
+      <UdemyBtn btn={"Get E-learning Business"} />
     </div>
   );
 };

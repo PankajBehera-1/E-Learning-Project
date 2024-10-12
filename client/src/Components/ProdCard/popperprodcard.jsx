@@ -116,17 +116,3 @@ export const ColorButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-/*
-const LikeButton = styled(Button)(({ theme }) => ({
-  backgroundColor: "transparent",
-  borderRadius: "0px",
-  border: "1px solid black",
-  borderRadius: "50%",
-  padding: "0.7rem 0rem",
-  //   marginLeft: "0.8rem",
-  color: "black",
-  "&:hover": {
-    backgroundColor: "rgba(0,0,0,.04)",
-  },
-}));
- */

@@ -4,67 +4,87 @@ const router = express.Router();
 
 const Product = require("../models/prod.model");
 
-router.get("", async (req, res) => {
+// Get all products
+router.get("/", async (req, res) => {
   try {
     let products = await Product.find().lean().exec();
     return res.status(200).send(products);
   } catch (err) {
-    return res.status(500).send({ message: err.message });
+    return res.status(500).send({ message: "Error fetching products: " + err.message });
   }
 });
 
+// Get a single product by ID
 router.get("/:id", async (req, res) => {
   try {
     let product = await Product.findById(req.params.id).lean().exec();
+    if (!product) {
+      return res.status(404).send({ message: "Product not found" });
+    }
     return res.status(200).send(product);
   } catch (err) {
-    return res.status(500).send({ message: err.message });
+    return res.status(500).send({ message: "Error fetching product: " + err.message });
   }
 });
 
+// Delete a product by ID
 router.delete("/:id", async (req, res) => {
   try {
-    let product = await Product.findByIdAndDelete(req.params.id).lean().exec();
-    return res.status(200).send(product);
+    let product = await Product.findByIdAndDelete(req.params.id).exec();
+    if (!product) {
+      return res.status(404).send({ message: "Product not found" });
+    }
+    return res.status(204).send(); // No content to send back
   } catch (err) {
-    return res.status(500).send({ message: err.message });
+    return res.status(500).send({ message: "Error deleting product: " + err.message });
   }
 });
 
+// Update a product (PATCH)
 router.patch("/:id", async (req, res) => {
   try {
-    let product = await Product.findOneAndUpdate(
-      { id: req.params.id },
+    let product = await Product.findByIdAndUpdate(
+      req.params.id,  // use _id here
       req.body,
-      { new: true }
-    );
+      { new: true } // Return the updated document
+    ).lean().exec();
+
+    if (!product) {
+      return res.status(404).send({ message: "Product not found" });
+    }
+
     return res.status(200).send(product);
   } catch (err) {
-    return res.status(500).send({ message: err.message });
+    return res.status(500).send({ message: "Error updating product: " + err.message });
   }
 });
 
+// Replace a product (PUT)
 router.put("/:id", async (req, res) => {
   try {
-    let product = await Product.findOneAndUpdate(
-      { id: req.params.id },
+    let product = await Product.findByIdAndUpdate(
+      req.params.id,  // use _id here
       req.body,
-      { new: true }
-    );
+      { new: true } // Return the updated document
+    ).lean().exec();
+
+    if (!product) {
+      return res.status(404).send({ message: "Product not found" });
+    }
 
     return res.status(200).send(product);
   } catch (err) {
-    return res.status(500).send({ message: err.message });
+    return res.status(500).send({ message: "Error replacing product: " + err.message });
   }
 });
 
-router.post("", async (req, res) => {
+// Create a new product
+router.post("/", async (req, res) => {
   try {
     let product = await Product.create(req.body);
-
-    return res.status(200).send(product);
+    return res.status(201).send(product); // Return 201 Created
   } catch (err) {
-    return res.status(500).send({ message: err.message });
+    return res.status(500).send({ message: "Error creating product: " + err.message });
   }
 });
 

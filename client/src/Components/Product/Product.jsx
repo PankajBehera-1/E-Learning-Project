@@ -116,9 +116,9 @@ export const Product = () => {
         <div className="innerFixBox">
           <div className="Ftop2lines">
             <div className="flex FTH">
-              <h1 className="FT1"> ₹455 </h1>
-              <span className="FT2"> ₹3,499 </span>
-              <span className="FT3"> 87% off </span>
+              <h1 className="FT1">₹455</h1>
+              <span className="FT2">₹3,499</span>
+              <span className="FT3">87% off</span>
             </div>
             <div className="red">
               <AccessAlarmsIcon />
@@ -126,8 +126,7 @@ export const Product = () => {
             </div>
           </div>
 
-          <button className="gotocartBtn">Go to cart</button>
-          <button className="buynowBtn">Buy now</button>
+          <button className="gotocartBtn">Add to cart</button>
 
           <p className="center">30-Day Money-Back Guarantee</p>
 
@@ -155,7 +154,6 @@ export const Product = () => {
 
           <div className="flex gap underline pointer">
             <h4>Share</h4>
-            <h4>Gift this course</h4>
             <h4>Apply Coupon</h4>
           </div>
 
@@ -165,7 +163,6 @@ export const Product = () => {
               Get your team access to 6,000+ top Udemy courses anytime,
               anywhere.
             </p>
-            <button className="buynowBtn btn2">Try Udemy Business</button>
           </div>
         </div>
       </div>
@@ -362,127 +359,8 @@ export const Product = () => {
           <div className="moreSection">
             <h5>5 more section</h5>
           </div>
-
-          {/* <hr />
-           <hr /> */}
-          {/* ========================================================== */}
-          {/* ----------------------------------------------------------- */}
-
-          {/* <Accordion>
-               
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          
-           
-          <Typography><h4>Intro to Course and Python</h4></Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion> */}
-          {/* --------------------------------------------------------------- */}
-
-          {/* <Accordion>
-               
-               <AccordionSummary
-                 expandIcon={<ExpandMoreIcon />}
-                 aria-controls="panel1a-content"
-                 id="panel1a-header"
-               >
-                 
-                  
-                 <Typography><h4>Setup</h4></Typography>
-               </AccordionSummary>
-               <AccordionDetails>
-                 <Typography>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                   malesuada lacus ex, sit amet blandit leo lobortis eget.
-                 </Typography>
-               </AccordionDetails>
-             </Accordion>
-            
-             <Accordion>
-               
-               <AccordionSummary
-                 expandIcon={<ExpandMoreIcon />}
-                 
-                 aria-controls="panel1a-content"
-                 id="panel1a-header"
-               >
-                   
-                 
-                  
-                 <Typography><h4>Learning Numpy</h4></Typography>
-                 
-               </AccordionSummary>
-               <AccordionDetails>
-                 <Typography>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                   malesuada lacus ex, sit amet blandit leo lobortis eget.
-                 </Typography>
-               </AccordionDetails>
-               
-             </Accordion>
-            
-             <Accordion>
-               
-               <AccordionSummary
-                 expandIcon={<ExpandMoreIcon />}
-                 aria-controls="panel1a-content"
-                 id="panel1a-header"
-               >
-                 
-                  
-                 <Typography><h4>Intro to Course and Python</h4></Typography>
-               </AccordionSummary>
-               <AccordionDetails>
-                 <Typography>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                   malesuada lacus ex, sit amet blandit leo lobortis eget.
-                 </Typography>
-               </AccordionDetails>
-             </Accordion>
-            
-
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-            
-          <Typography>Accordion 2</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion disabled>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3a-content"
-          id="panel3a-header"
-        >
-          <Typography>Disabled Accordion</Typography>
-        </AccordionSummary>
-      </Accordion> */}
-
-          {/* ================================================================ */}
         </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
     </div>
   );
 };

@@ -7,7 +7,7 @@ export const Bottombar=() =>{
 
      <div className='Btop flex'>
          <div className='Tleft'>
-             <h2 className='white'>Top companies choose <span className='purple'>Udemy Business</span> to build in-demand career skills.</h2>
+             <h2 className='white'>Top companies choose <span className='purple'>E-learing</span> to build in-demand career skills.</h2>
          </div>
          <div className='Tright'>
              <img src="https://s.udemycdn.com/partner-logos/v4/nasdaq-light.svg" alt="" />
@@ -24,8 +24,8 @@ export const Bottombar=() =>{
      <div className='Bmiddle flex'>
          <div className='Mleft white flex'>
              <ul >
-                 <li>Udemy Business</li>
-                 <li>Teach on Udemy</li>
+                 <li>E-learning Business</li>
+                 <li>Teach</li>
                  <li>Get the app</li>
                  <li>About us</li>
                  <li>Contact us</li>
@@ -61,7 +61,7 @@ export const Bottombar=() =>{
              <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy-inverted.svg" alt="" />
          </div>
          <div className='Eright white'>
-             <p>© 2022 Udemy, Inc.</p>
+             <p>© 2024 E-Learning, Inc.</p>
          </div>
      </div>
     </div>

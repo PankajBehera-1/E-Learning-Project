@@ -1,72 +1,83 @@
+.prodLink {
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit text color from parent */
+}
+
 .prodcard {
-  /* border: 2px solid black; */
-  width: 14.2rem;
-  height: auto;
+  width: 250px; /* Fixed width */
+  height: 350px; /* Fixed height */
+  border: 1px solid #e0e0e0; /* Light border */
+  overflow: hidden; /* Prevent overflow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+  margin: 20px; /* Add margin */
+  background-color: #fff; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Column layout */
+  align-items: center; /* Center align items */
+  padding: 10px; /* Padding inside the card */
 }
-.prodLink{
-  text-decoration: none;
-  color: black;
-  box-sizing: border-box;
- width: auto;
- height: auto;
+
+.prodcard:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
+
 .prodimg {
-  max-width: 100%;
+  width: 100%; /* Full width */
+  height: 150px; /* Fixed height for images */
+  object-fit: cover; /* Cover to maintain aspect ratio */
 }
+
 .card-title {
-  margin-top: 0rem;
-  line-height: 1.1;
+  font-size: 1.2rem; /* Title size */
+  margin: 10px 0; /* Margin above and below title */
+  font-weight: bold; /* Bold title */
+  text-align: center; /* Center text */
 }
-.card-title a {
-  border: none;
-  padding: 0;
-}
+
 .author {
-  margin-bottom: 0.4rem;
-  font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto, segoe ui,
-    Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji,
-    segoe ui symbol;
-  font-weight: 400;
-  line-height: 1.4;
-  font-size: 0.85rem;
-  color: #48494a;
-  white-space: nowrap;
-  margin-top: 0.4rem;
+  font-size: 0.9rem; /* Author size */
+  color: #666; /* Gray color for author */
+  margin-bottom: 10px; /* Space below author */
 }
+
 .rating-div {
-  display: flex;
-  align-items: center;
+  display: flex; /* Flexbox for rating layout */
+  align-items: center; /* Center align */
+  margin-bottom: 10px; /* Space below rating */
 }
+
 .rate-num {
-  margin-right: 0.4rem;
-  color: #b4690e;
-  font-weight: 700;
+  font-weight: bold; /* Bold rating number */
+  margin-right: 5px; /* Space between number and stars */
 }
-.rate-count {
-  margin-left: 0.4rem;
-  color: gray;
-  font-size: 0.8rem;
-}
+
 .price-bar {
-  display: flex;
-  align-items: center;
+  display: flex; /* Flexbox for price layout */
+  justify-content: space-between; /* Space between prices */
+  align-items: center; /* Center align */
+  margin-top: auto; /* Push prices to the bottom */
+  width: 100%; /* Full width */
 }
+
 .price {
-  font-weight: 600;
-  margin-right: 0.62rem;
-  color: #1c1d1f;
+  font-size: 1.2rem; /* Larger font size for price */
+  color: #e91e63; /* Color for current price */
 }
+
 .oldprice {
-  color: #6a6f73;
-  text-decoration: line-through;
-  font-size: 0.9rem;
+  font-size: 0.9rem; /* Smaller font size for old price */
+  color: #999; /* Gray color for old price */
+  text-decoration: line-through; /* Strikethrough for old price */
 }
+
 .prod-cont {
   display: grid;
   display: grid;
   grid-auto-columns: max-content;
   grid-auto-flow: column;
-  grid-gap: 1.6rem;
+  grid-gap: 1rem;
   grid-auto-columns: calc((100% - (5 - 1) * 1.6rem) / 5);
   overflow-x: hidden;
 }
@@ -77,6 +88,9 @@
 .tec-cont h2 {
   margin-bottom: 1.5rem;
   margin-top: 3rem;
+}
+.title{
+  margin-left: 13rem !important;
 }
 .tec-cont > div {
   width: 90%;

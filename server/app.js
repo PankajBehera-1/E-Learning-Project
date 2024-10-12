@@ -1,3 +1,4 @@
+
 const express = require("express");
 const cors = require("cors");
 const connect = require("./config/db"); 
@@ -7,32 +8,37 @@ const cartController = require("./controller/cart.controller");
 const wishlistController = require("./controller/wishlist.controller"); 
 const { authenticate } = require("./middlewares/authenticate"); 
 
+
 const app = express();
-app.use(cors());
-app.use(express.json());
+
+// Middleware setup
+app.use(cors());  // To handle cross-origin requests
+app.use(express.json());  // To parse incoming JSON requests
+
+// Environment variables and port setup
 const PORT = process.env.PORT || 8080;
 
-// Connect to the database
+// Connect to MongoDB
 connect()
   .then(() => {
     console.log("Connected to MongoDB");
   })
-  .catch(err => {
+  .catch((err) => {
     console.error("Database connection error:", err);
   });
 
-// Route handlers
-app.use("/courses", prodController);
-app.use("/join", userController);
-app.use("/cart", cartController);
-app.use("/wishlist", wishlistController);
+// Routes setup
+app.use("/courses", prodController);  // Product related routes (for courses)
+app.use("/join", userController);     // User related routes
+app.use("/cart", cartController);     // Cart related routes
+app.use("/wishlist", wishlistController);  // Wishlist related routes
 
-// Auth route
+// Auth route with authentication middleware
 app.post("/auth", authenticate, async (req, res) => {
   try {
     return res.status(200).send({ auth: true, user: req.user });
   } catch (err) {
-    return res.status(500).send(err.message);
+    return res.status(500).send({ message: err.message });
   }
 });
 
@@ -40,3 +46,5 @@ app.post("/auth", authenticate, async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
+
+module.exports = app;

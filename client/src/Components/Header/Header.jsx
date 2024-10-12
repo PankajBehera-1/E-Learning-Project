@@ -17,14 +17,12 @@ import eLogo from "../../assets/elearning.webp";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { Navigate } from "react-router-dom";
-
+import { Navigate } from "react-router-dom"; // Import Navigate
 
 export const Header = () => {
   const { cart } = useSelector((store) => store.cart);
   const { user } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const [openModal, setOpenModal] = useState(false);
 
@@ -43,12 +41,22 @@ export const Header = () => {
         });
   }, [dispatch, user]);
 
+  const navigate = useNavigate(); // Initialize useNavigate
+  const [isLoggedOut, setIsLoggedOut] = useState(false); // State variable for logout
+
   const handleLogout = () => {
-    // Perform logout logic (like clearing the token)
-    localStorage.removeItem("token"); // Clear token
-    dispatch(auth(null)); // Clear user state in Redux
-    <Navigate to={"/"} /> // Redirect to landing page
+    localStorage.removeItem("token");
+    dispatch(auth(null));
+    setIsLoggedOut(true); 
+    window.location.reload(); 
   };
+
+  // Redirect after logout
+  useEffect(() => {
+    if (isLoggedOut) {
+      navigate("/"); // Redirect to landing page
+    }
+  }, [isLoggedOut, navigate]); // Add navigate to the dependency array
 
   return (
     <>
@@ -57,7 +65,7 @@ export const Header = () => {
           <Link className="udemylink" to={"/"}>
             <img className="udemylogo" src={eLogo} alt="" />
           </Link>
-          
+
           <div className="searchbar">
             <button>
               <SearchIcon />
@@ -69,7 +77,7 @@ export const Header = () => {
               <span className="nav-span">E-learning Business</span>
             </Link>
           </div>
-          
+
           {user?.user && (
             <div>
               <Link className="linkstyle" to={"#"}>
@@ -156,21 +164,31 @@ export const Header = () => {
         >
           <Box
             sx={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(140%, -180%)',
-              bgcolor: 'background.paper',
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(140%, -180%)",
+              bgcolor: "background.paper",
               boxShadow: 24,
               p: 4,
             }}
           >
             <h2 id="logout-modal-title">Logout</h2>
-            <p id="logout-modal-description">Are you sure you want to log out?</p>
-            <Button variant="contained" onClick={handleLogout} style={{background:"red"}}>
+            <p id="logout-modal-description">
+              Are you sure you want to log out?
+            </p>
+            <Button
+              variant="contained"
+              onClick={handleLogout}
+              style={{ background: "red" }}
+            >
               Log Out
             </Button>
-            <Button variant="outlined" onClick={() => setOpenModal(false)} style={{marginLeft:"50px"}}>
+            <Button
+              variant="outlined"
+              onClick={() => setOpenModal(false)}
+              style={{ marginLeft: "50px" }}
+            >
               Cancel
             </Button>
           </Box>

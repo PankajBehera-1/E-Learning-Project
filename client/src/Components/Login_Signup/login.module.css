@@ -1,5 +1,5 @@
 .container {
-  margin-top: -5rem;
+  margin-top: -3rem;
   display: flex;
   margin-left: 25px;
   justify-content: center;
@@ -14,9 +14,11 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
   width: 400px; /* Fixed width for the card */
 }
-.card h4{
+
+.card h4 {
   text-align: center;
 }
+
 .login_inputDiv {
   display: flex;
   flex-direction: column;
@@ -42,7 +44,7 @@
 }
 
 .login_input {
-  background-color: #c92517 !important; 
+  background-color: #c92517 !important;
   color: white; /* Button text color */
   border: none;
   padding: 12px;
@@ -55,7 +57,7 @@
 }
 
 .login_input:hover {
-  background-color: #0056b3; /* Darken on hover */
+  background-color: #0827f4a3; /* Darken on hover */
 }
 
 .forgot_pws {
@@ -69,7 +71,7 @@
 }
 
 a {
-  color: #007bff; /* Link color */
+  color: #0015ff; /* Link color */
   text-decoration: none; /* Remove underline */
 }
 
@@ -82,4 +84,24 @@ a:hover {
   border: 0;
   height: 1px;
   background: #ddd; /* Light gray line */
+}
+.socialLogin{
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 20px;
+}
+.socialIcons{
+  display: flex;
+  justify-content: space-between;
+
+
+.googleBtn, .facebookBtn{
+  color: rgb(85, 0, 255);
+  border: 1px blue solid;
+}}
+.googleBtn:hover, .facebookBtn:hover{
+  background-color: #007bff;
+  color: white;
+  scale: 1.1;
+  border: black 1px solid;
 }
