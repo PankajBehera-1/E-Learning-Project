@@ -17,7 +17,6 @@ import eLogo from "../../assets/elearning.webp";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { Navigate } from "react-router-dom"; // Import Navigate
 
 export const Header = () => {
   const { cart } = useSelector((store) => store.cart);

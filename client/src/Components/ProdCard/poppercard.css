@@ -1,7 +1,7 @@
 .poppercard{
     /* border: 2px solid black; */
-    width: 22rem;
-    padding: 1.4rem;
+    width: 25rem;
+    /* padding: 1.4rem; */
     background-color: #fff;
     box-shadow: 0 0 0 1px #d1d7dc, 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
     color: #1c1d1f;

@@ -74,11 +74,10 @@
 
 .prod-cont {
   display: grid;
-  display: grid;
   grid-auto-columns: max-content;
   grid-auto-flow: column;
-  grid-gap: 1rem;
-  grid-auto-columns: calc((100% - (5 - 1) * 1.6rem) / 5);
+  grid-gap: 10px;
+  /* grid-auto-columns: calc((100% - (5 - 1) * 1.6rem) / 5); */
   overflow-x: hidden;
 }
 .tec-cont {

@@ -10,7 +10,6 @@ import Alert from "@mui/material/Alert";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCartFunction } from "../../Redux/cart/action";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import { addToWishlistFunction } from "../../Redux/wishlist/action";
 
 export const PopperCard = ({ data }) => {

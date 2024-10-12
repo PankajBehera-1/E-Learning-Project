@@ -4,15 +4,12 @@ import { Link } from "react-router-dom";
 import { ProdCard, SuggestionCard, TechCard } from "../ProdCard/ProdCard";
 import { PopperCard } from "../ProdCard/popperprodcard";
 import { styled } from "@mui/material/styles";
-import { nanoid } from "nanoid";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Skeleton from "@mui/material/Skeleton";
 
 import { Bottombar } from "../Bottom/Bottombar";
-
-import style from "./landing.module.css";
 
 export const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />

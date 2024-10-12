@@ -1,7 +1,6 @@
 import React from "react";
 import "./Product.css";
 import ReportIcon from "@mui/icons-material/Report";
-// import LanguageTwoToneIcon from '@mui/icons-materialLanguageTwoTone';
 import PublicTwoToneIcon from "@mui/icons-material/PublicTwoTone";
 import ClosedCaptionRoundedIcon from "@mui/icons-material/ClosedCaptionRounded";
 
@@ -25,12 +24,7 @@ import SystemUpdateAltTwoToneIcon from "@mui/icons-material/SystemUpdateAltTwoTo
 import AllInclusiveTwoToneIcon from "@mui/icons-material/AllInclusiveTwoTone";
 import PhoneAndroidTwoToneIcon from "@mui/icons-material/PhoneAndroidTwoTone";
 import EmojiEventsTwoToneIcon from "@mui/icons-material/EmojiEventsTwoTone";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Header } from "../Header/Header";
+
 
 export const Product = () => {
   const [open, setOpen] = React.useState(false);

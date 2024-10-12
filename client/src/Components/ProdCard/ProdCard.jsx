@@ -2,13 +2,10 @@ import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
 import "./prod.css";
 import React from "react";
-import { MultiItemCarousel } from "../MultiCarousel/MultiItemCarousel";
 import { LightTooltip } from "../LandingPage/Landin";
 import { PopperCard } from "./popperprodcard";
-// export const PopperCard = React.forwardRef(function PopperCard(props, ref) {
 
 export const ProdCard = React.forwardRef(function ProdCard(props, ref) {
-  //  Spread the props to the underlying DOM element.
 
   return (
     <Link
