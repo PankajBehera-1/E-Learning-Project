@@ -13,8 +13,8 @@ import { addToCartFunction } from "../../Redux/cart/action";
 import { addToWishlistFunction } from "../../Redux/wishlist/action";
 
 export const PopperCard = ({ data }) => {
-  const { cart, loading, error } = useSelector((store) => store.cart);
-  const { wishlist, wishlistloading, wishlisterror } = useSelector(
+  const { loading, error } = useSelector((store) => store.cart);
+  const { wishlistloading} = useSelector(
     (store) => store.wishlist
   );
   const { user } = useSelector((store) => store.auth);

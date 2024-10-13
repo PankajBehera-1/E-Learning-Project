@@ -71,10 +71,7 @@ const Login = () => {
           </ColorButton>
         </div>
 
-        <div className={style.forgot_pws}>
-          <span>or </span>
-          <a href="#">Forgot Password</a>
-        </div>
+       
 
         <div className={style.socialLogin}>
 

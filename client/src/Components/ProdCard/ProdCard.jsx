@@ -16,7 +16,6 @@ export const ProdCard = React.forwardRef(function ProdCard(props, ref) {
       <div {...props} ref={ref} className="prodcard">
         <img className="prodimg" src={props.data?.image} alt="" />
         <h3 className="card-title">
-          {/* <Link to={`/courses/${props.data?._id}`}>{props.data?.title}</Link> */}
           {props.data?.title}
         </h3>
         <div className="author">{props.data?.author}</div>

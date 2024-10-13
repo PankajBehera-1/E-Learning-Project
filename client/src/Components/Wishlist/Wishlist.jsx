@@ -1,19 +1,10 @@
 import React from "react";
 import "./wishlist.css";
-import { Header } from "../Header/Header";
 import { ProdCard } from "../ProdCard/ProdCard";
 import "../ProdCard/prod.css";
-
-import PropTypes from "prop-types";
-import { useTheme } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-import IconButton from "@mui/material/IconButton";
 
 const Wishlist = () => {
   return (
