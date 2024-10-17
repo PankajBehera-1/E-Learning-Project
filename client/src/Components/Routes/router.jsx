@@ -7,6 +7,8 @@ import Signup from "../Login_Signup/Signup";
 import Payment from "../Payment/Payment";
 import { Product } from "../Product/Product";
 import Wishlist from "../Wishlist/Wishlist";
+import  Admin from "../Admin/Admin"
+import About from "../About/About"
 
 export const AllRoutes = () => {
   return (
@@ -21,6 +23,11 @@ export const AllRoutes = () => {
         <Route path="/payment" element={<Payment />}></Route>
         <Route path="/join/signup-popup" element={<Signup />}></Route>
         <Route path="/join/login-popup" element={<Login />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
+        <Route path="/about" element={<About />}></Route>
+
+
+
       </Routes>
     </>
   );

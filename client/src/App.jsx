@@ -1,5 +1,8 @@
 import Favicon from "react-favicon";
 import { AllRoutes } from "./Components/Routes/router";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 export const App = () => {
   return (

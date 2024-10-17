@@ -1,0 +1,40 @@
+.adminContainer {
+  display: flex;
+  margin-top: -4rem;
+}
+
+.drawer {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.drawerList {
+  width: 250px;
+}
+
+.iconColor {
+  color: #f44336; /* Red theme color */
+}
+
+.mainContent {
+  flex-grow: 1;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.appBar {
+  z-index: 1201;
+  background-color: #f23a2d; /* Red theme color */
+}
+
+.title {
+  flex-grow: 1;
+}
+
+
+
+.logoutIcon {
+  margin-right: 8px;
+  color: #f44336; /* Red theme color */
+}
+
