@@ -41,7 +41,7 @@ const About = () => {
 
       </div>
        <div className={style.contactForm}>
-          <form>
+          <form style={{marginLeft:"0px"}}>
             <h2>Send Message</h2>
             <div className={style.inputBox}>
               <input type="text" name="fullName" required="required" />
